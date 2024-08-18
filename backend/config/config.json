@@ -1,0 +1,10 @@
+{
+    "development": {
+      "username": "root",
+      "password": "",
+      "database": "nodue",
+      "host": "localhost",
+      "dialect": "mysql"
+    }
+  }
+  

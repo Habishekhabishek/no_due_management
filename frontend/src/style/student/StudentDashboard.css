@@ -1,0 +1,89 @@
+/* Full height layout */
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Toolbar and AppBar styling */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1400;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00264A;
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.menuButton {
+    display: none;
+}
+
+/* Drawer styles */
+/* Drawer styles */
+.drawer {
+    width: 240px;
+    flex-shrink: 0;
+    position: fixed;
+    top: 64px;
+    /* Adjust based on the height of the AppBar */
+    left: 0;
+    height: calc(100% - 64px);
+    /* Ensure it occupies full height below the AppBar */
+    overflow: auto;
+    /* Ensure content is scrollable if it overflows */
+}
+
+.drawerPaper {
+    z-index: 1200;
+    width: 240px;
+    position: relative;
+    /* Change from absolute to relative */
+    background-color: #fff;
+    /* Add background color to ensure text visibility */
+}
+
+/* Main content area */
+.content {
+    flex-grow: 1;
+    padding: 16px;
+    margin-left: 240px;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 600px) {
+    .menuButton {
+        display: inline-flex;
+    }
+
+    .drawer {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .drawerOpen .drawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 240px;
+    }
+}
